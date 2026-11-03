@@ -3,12 +3,16 @@
  */
 package ldts.project;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import java.io.IOException;
 
+public class App {
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Game game = new Game();
+        try{
+            game.run();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
