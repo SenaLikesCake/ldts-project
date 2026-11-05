@@ -12,6 +12,7 @@ import com.googlecode.lanterna.terminal.Terminal;
 public class Game {
     
     private Screen screen;
+    private Player player = new Player(5, 5);
 
     public Game(){
         try {
@@ -43,6 +44,7 @@ public class Game {
 
     public void draw() throws IOException{
         screen.clear();
+        player.draw(screen.newTextGraphics());
         screen.refresh();
     }
 
