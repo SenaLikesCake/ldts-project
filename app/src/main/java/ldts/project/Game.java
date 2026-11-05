@@ -30,13 +30,27 @@ public class Game {
     public void processKeyStroke(KeyStroke key){
         switch (key.getKeyType()) {
             case KeyType.Character:
-                if (key.getCharacter() == 'q'){
-                    try{
-                        screen.close();
-                    }
-                    catch(IOException e){
-                        e.printStackTrace();
-                    }
+                switch (key.getCharacter()) {
+                    case 'q':
+                        try{
+                            screen.close();
+                        }
+                        catch(IOException e){
+                            e.printStackTrace();
+                        }
+                        break;
+                    case 'w':
+                        player.move(0);
+                        break;
+                    case 'd':
+                        player.move(1);
+                        break;
+                    case 's':
+                        player.move(2);
+                        break;
+                    case 'a':
+                        player.move(3);
+                        break;
                 }
                 break;
         }
